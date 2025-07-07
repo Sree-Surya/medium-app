@@ -30,6 +30,7 @@ user.post("/signup", async (c) => {
     }
     const user = await prisma.user.create({
       data: {
+        name: body.name || null,
         email: body.email,
         password: body.password,
       },
